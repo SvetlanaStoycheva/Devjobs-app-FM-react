@@ -3,8 +3,7 @@
 Fonts
 ===============
 */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600;700&display=swap');
 /*
 =============== 
 Variables
@@ -12,14 +11,18 @@ Variables
 */
 
 :root {
-  /* primary/main color */
-  --clr-primary-soft-blue: hsl(231, 69%, 60%);
-  --clr-primary-soft-red: hsl(0, 94%, 66%);
-  --clr-primary-grayish-blue: hsl(229, 8%, 60%);
-  --clr-primary-dark-grayish-blue: hsl(231, 5%, 29%);
-  --clr-primary-very-dark-blue: hsl(229, 31%, 21%);
+  /* primary colors */
+  --clr-primary-violet: hsl(227, 22%, 51%);
+  --clr-primary-ligth-violet: hsl(235, 82%, 77%);
+  --clr-primary-very-dark-blue: hsl(219, 29%, 14%);
+  --clr-primary-midnight: hsl(220, 29%, 14%);
 
-  --ff-primary: 'Rubik', sans-serif;
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-grey: hsl(210, 22%, 96%);
+  --clr-grey: hsl(212, 23%, 69%);
+  --clr-dark-grey: hsl(214, 17%, 51%);
+
+  --ff-primary: 'Kumbh Sans', sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
@@ -70,23 +73,28 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  text-transform: capitalize;
-  line-height: 1.25;
   margin-bottom: 0.75rem;
+  font-weight: 700;
 }
 h1 {
-  font-size: 3rem;
+  font-size: 28px;
+  line-height: 34px;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 24px;
+  line-height: 29px;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 20px;
+  line-height: 24px;
 }
 h4 {
-  font-size: 0.875rem;
+  font-size: 14px;
+  line-height: 18px;
 }
 p {
+  font-size: 16px;
+  line-height: 26px;
   margin-bottom: 1.25rem;
 }
 .btn {
@@ -114,6 +122,23 @@ p {
     padding: 1.2rem 1.5rem;
   }
 }
+/*
+=============== 
+Styles
+===============
+*/
+.light-theme {
+  --theme-bg: hsl(210, 22%, 96%);
+  --single-company-bg: hsl(212, 23%, 69%);
+  --company-title: hsl(220, 29%, 14%);
+}
+
+.dark-theme {
+  --theme-bg: hsl(219, 29%, 14%);
+  --single-company-bg: hsl(220, 29%, 14%);
+  --company-title: hsl(210, 22%, 96%);
+}
+
 /*
 =============== 
 Styles
