@@ -1,7 +1,16 @@
 import React from 'react';
+import Header from './components/Header';
+import Search from './components/Search';
+import Companies from './components/Companies';
 
 function App() {
-  return <h2>hello</h2>;
+  return (
+    <>
+      <Header />
+      <Search />
+      <Companies />
+    </>
+  );
 }
 
 export default App;

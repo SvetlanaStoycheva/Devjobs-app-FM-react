@@ -12,7 +12,7 @@ Variables
 
 :root {
   /* primary colors */
-  --clr-primary-violet: hsl(227, 22%, 51%);
+  --clr-primary-violet: hsl(228, 39%, 55%);
   --clr-primary-ligth-violet: hsl(235, 82%, 77%);
   --clr-primary-very-dark-blue: hsl(219, 29%, 14%);
   --clr-primary-midnight: hsl(220, 29%, 14%);
@@ -144,3 +144,119 @@ Styles
 Styles
 ===============
 */
+/*
+=============== 
+Header
+===============
+*/
+.header {
+  background: url(./assets/mobile/bg-pattern-header.svg) center/cover;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+  max-width: var(--max-width);
+}
+.toggle-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 9rem;
+}
+.header-icon-sun {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: var(--clr-light-grey);
+}
+.header-icon-moon {
+  color: var(--clr-light-grey);
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 700px) {
+  .header {
+    background: url(./assets/tablet/bg-pattern-header.svg) center/cover;
+    padding: 2rem;
+    padding-bottom: 4rem;
+  }
+  .toggle-btn {
+    width: 11rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  .header {
+    background: url(./assets/desktop/bg-pattern-header.svg) center/cover;
+    padding: 2rem 8rem;
+    padding-bottom: 4rem;
+  }
+}
+/*///////////// 
+Toggle switch button 
+//////////////*/
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--clr-light-grey);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:hover:before {
+  background-color: var(--clr-primary-ligth-violet);
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 8px;
+  bottom: 7px;
+  background-color: var(--clr-primary-violet);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  /* background-color: var(--clr-toggle); */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* end of toggle switch button */
