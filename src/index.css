@@ -129,7 +129,7 @@ Styles
 */
 .light-theme {
   --theme-bg: hsl(210, 22%, 96%);
-  --single-company-bg: hsl(212, 23%, 69%);
+  --single-company-bg: hsl(0, 0%, 100%);
   --company-title: hsl(220, 29%, 14%);
 }
 
@@ -260,3 +260,138 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 /* end of toggle switch button */
+
+/*
+=============== 
+Search Form
+===============
+*/
+.search-container {
+  width: 80vw;
+  background: var(--single-company-bg);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: -2rem;
+  display: grid;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+.form-control {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  width: 24rem;
+}
+.title-input,
+.location-input {
+  border: transparent;
+  margin-left: 0.5rem;
+  width: 18rem;
+  height: 2rem;
+  background: var(--single-company-bg);
+  padding: 0 1rem;
+  font-family: var(--ff-primary);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  color: var(--clr-grey);
+}
+.search-title-icon,
+.search-location-icon {
+  color: var(--clr-primary-violet);
+  margin-top: 0.5rem;
+}
+.title-input::placeholder,
+.location-input::placeholder {
+  color: var(--clr-grey);
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.fulltime-label {
+  color: var(--company-title);
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+.search-checkbox {
+  background: var(--clr-grey);
+}
+.submit-btn {
+  background: var(--clr-primary-violet);
+  border: transparent;
+  cursor: pointer;
+  color: var(--clr-white);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+.submit-btn:hover {
+  background: var(--clr-primary-ligth-violet);
+}
+@media screen and (min-width: 700px) {
+  .search-container {
+    width: 90vw;
+    padding: 0.5rem 1rem;
+  }
+  .form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto auto;
+    align-content: center;
+    width: 90vw;
+    padding: 0 1rem;
+  }
+  .form-control {
+    padding: 0.5rem;
+    width: 10rem;
+  }
+  .title-input,
+  .location-input {
+    width: 10rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+  .title-input::placeholder,
+  .location-input::placeholder {
+    font-size: 0.8rem;
+    letter-spacing: 0.02rem;
+  }
+  .fulltime-label {
+    font-size: 0.9rem;
+  }
+  .submit-btn {
+    margin-top: 0;
+    height: 2.2rem;
+    align-self: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .search-container {
+    width: 80vw;
+  }
+  .form-container {
+    width: 80vw;
+  }
+  .form-control {
+    padding: 0.6rem;
+    width: 16rem;
+  }
+  .title-input,
+  .location-input {
+    width: 18rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+  .title-input::placeholder,
+  .location-input::placeholder {
+    font-size: 0.9rem;
+    letter-spacing: 0.02rem;
+  }
+  .fulltime-label {
+    font-size: 0.9rem;
+  }
+  .submit-btn {
+    height: 2.4rem;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useReducer } from 'react';
 import reducer from './reducer';
+import { companiesData } from './data.js';
 
 const getStorageTheme = () => {
   let theme = localStorage.getItem('theme');
@@ -10,7 +11,11 @@ const getStorageTheme = () => {
   }
 };
 
-const initialState = {};
+const initialState = {
+  filters: { title: '', location: '', fulltime: false },
+  all_companies: companiesData,
+  filtered_companies: [],
+};
 
 const AppContext = React.createContext();
 
@@ -26,8 +31,20 @@ const AppProvider = ({ children }) => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  const updateFilters = (e) => {
+    const name = e.target.name;
+    let value = e.target.value;
+    if (name === 'fulltime') {
+      value = e.target.checked;
+    }
+    dispatch({ type: 'UPDATE_FILTER', payload: [name, value] });
+  };
+  const handleSubmit = () => {};
+
   return (
-    <AppContext.Provider value={{ ...state, toggleTheme }}>
+    <AppContext.Provider
+      value={{ ...state, toggleTheme, updateFilters, handleSubmit, theme }}
+    >
       {children}
     </AppContext.Provider>
   );
