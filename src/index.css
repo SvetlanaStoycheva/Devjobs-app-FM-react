@@ -12,7 +12,7 @@ Variables
 
 :root {
   /* primary colors */
-  --clr-primary-violet: hsl(228, 39%, 55%);
+  --clr-primary-violet: hsl(228, 67%, 53%);
   --clr-primary-ligth-violet: hsl(235, 82%, 77%);
   --clr-primary-very-dark-blue: hsl(219, 29%, 14%);
   --clr-primary-midnight: hsl(220, 29%, 14%);
@@ -57,11 +57,10 @@ body {
   display: block;
   width: 100%;
 }
-.main {
-  display: grid;
-  place-items: center;
-  margin: 0 auto;
+main {
+  background: var(--theme-bg);
 }
+
 li {
   list-style-type: none;
 }
@@ -135,7 +134,7 @@ Styles
 
 .dark-theme {
   --theme-bg: hsl(219, 29%, 14%);
-  --single-company-bg: hsl(220, 29%, 14%);
+  --single-company-bg: hsl(224, 35%, 18%);
   --company-title: hsl(210, 22%, 96%);
 }
 
@@ -393,5 +392,110 @@ Search Form
   }
   .submit-btn {
     height: 2.4rem;
+  }
+}
+
+/*
+=============== 
+All companies container
+===============
+*/
+
+.single-company {
+  position: relative;
+  width: 80vw;
+  margin: 2.2rem auto;
+  background: var(--single-company-bg);
+  padding: 2rem;
+  padding-top: 3rem;
+  border-radius: 6px;
+}
+.company-logo {
+  position: absolute;
+  left: 10%;
+  top: -5%;
+  width: 3rem;
+  max-height: 3rem;
+  padding: 1rem 0.3rem;
+  border-radius: 12px;
+}
+.contract-container {
+  color: var(--clr-grey);
+  display: flex;
+  width: 10rem;
+  justify-content: space-between;
+  align-content: center;
+}
+.dot {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  line-height: 10px;
+}
+.company-name {
+  color: var(--clr-grey);
+}
+.company-location {
+  color: var(--clr-primary-violet);
+}
+.position {
+  color: var(--company-title);
+  cursor: pointer;
+}
+.submit-btn {
+  background: var(--clr-primary-violet);
+  border: transparent;
+  cursor: pointer;
+  color: var(--clr-white);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+.submit-btn:hover {
+  background: var(--clr-primary-ligth-violet);
+}
+.load-btn {
+  margin-bottom: 10rem;
+  margin-left: 41%;
+  padding: 0.8rem 1.5rem;
+  align-self: center;
+}
+@media screen and (min-width: 700px) {
+  .companies {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .all-companies-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+  .single-company {
+    width: 43vw;
+    margin: 2.2rem auto;
+    background: var(--single-company-bg);
+    padding: 2rem;
+    padding-top: 3rem;
+    border-radius: 6px;
+  }
+  .position {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .companies {
+    width: 80vw;
+    max-width: var(--max-width);
+  }
+  .all-companies-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+  }
+  .single-company {
+    width: 26vw;
+  }
+  .position {
+    font-size: 1rem;
   }
 }
