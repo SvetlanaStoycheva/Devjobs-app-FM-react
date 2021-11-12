@@ -1,13 +1,12 @@
 import React from 'react';
 import { useGlobalContext } from '../context';
-import logo1 from '../';
 
 const Companies = () => {
-  const { all_companies, theme } = useGlobalContext();
+  const { filtered_companies, showCompany } = useGlobalContext();
   return (
     <section className='companies'>
       <div className='all-companies-container'>
-        {all_companies.map((item) => {
+        {filtered_companies.map((item) => {
           const {
             id,
             company,
@@ -18,7 +17,6 @@ const Companies = () => {
             contract,
             location,
           } = item;
-          console.log(logo);
 
           return (
             // single company container
@@ -34,14 +32,18 @@ const Companies = () => {
                 <p className='dot'>.</p>
                 <p>{contract}</p>
               </div>
-              <h3 className='position'>{position}</h3>
+              <h3 className='position' onClick={showCompany}>
+                {position}
+              </h3>
               <p className='company-name'>{company}</p>
               <h4 className='company-location'>{location}</h4>
             </article>
           );
         })}
       </div>
-      <button className='submit-btn load-btn'>Load More</button>
+      <div className='load-btn-container'>
+        <button className='submit-btn load-btn'>Load More</button>
+      </div>
     </section>
   );
 };

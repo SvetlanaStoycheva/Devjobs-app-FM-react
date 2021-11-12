@@ -14,7 +14,7 @@ const getStorageTheme = () => {
 const initialState = {
   filters: { title: '', location: '', fulltime: false },
   all_companies: companiesData,
-  filtered_companies: [],
+  filtered_companies: companiesData,
 };
 
 const AppContext = React.createContext();
@@ -39,11 +39,23 @@ const AppProvider = ({ children }) => {
     }
     dispatch({ type: 'UPDATE_FILTER', payload: [name, value] });
   };
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    dispatch({ type: 'FILTER_PRODUCTS' });
+  };
+  const showCompany = (e) => {
+    console.log(e.target.textContent);
+  };
 
   return (
     <AppContext.Provider
-      value={{ ...state, toggleTheme, updateFilters, handleSubmit, theme }}
+      value={{
+        ...state,
+        toggleTheme,
+        updateFilters,
+        handleSubmit,
+        theme,
+        showCompany,
+      }}
     >
       {children}
     </AppContext.Provider>

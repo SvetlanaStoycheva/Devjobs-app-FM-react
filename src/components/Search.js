@@ -61,9 +61,11 @@ const Search = () => {
             Full Time Only
           </label>
         </div>
-        <button type='submit' className='submit-btn' onClick={handleSubmit}>
-          Search
-        </button>
+        <div className='form-control'>
+          <button type='submit' className='submit-btn' onClick={handleSubmit}>
+            Search
+          </button>
+        </div>
       </form>
     </section>
   );
