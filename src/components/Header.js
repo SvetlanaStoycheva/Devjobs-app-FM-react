@@ -3,12 +3,16 @@ import logo from '../assets/desktop/logo.svg';
 import { BsFillSunFill } from 'react-icons/bs';
 import { FaMoon } from 'react-icons/fa';
 import { useGlobalContext } from '../context';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { toggleTheme } = useGlobalContext();
   return (
     <section className='header'>
-      <img src={logo} alt='site-logo' />
+      <Link to='/'>
+        <img src={logo} alt='site-logo' />
+      </Link>
+
       <div className='toggle-btn'>
         <span className='header-icon-sun'>
           <BsFillSunFill />

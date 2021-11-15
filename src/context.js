@@ -42,9 +42,6 @@ const AppProvider = ({ children }) => {
   const handleSubmit = () => {
     dispatch({ type: 'FILTER_PRODUCTS' });
   };
-  const showCompany = (e) => {
-    console.log(e.target.textContent);
-  };
 
   return (
     <AppContext.Provider
@@ -54,7 +51,6 @@ const AppProvider = ({ children }) => {
         updateFilters,
         handleSubmit,
         theme,
-        showCompany,
       }}
     >
       {children}

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useGlobalContext } from '../context';
+import { Link } from 'react-router-dom';
 
 const Companies = () => {
-  const { filtered_companies, showCompany } = useGlobalContext();
+  const { filtered_companies } = useGlobalContext();
   return (
     <section className='companies'>
       <div className='all-companies-container'>
@@ -32,9 +33,9 @@ const Companies = () => {
                 <p className='dot'>.</p>
                 <p>{contract}</p>
               </div>
-              <h3 className='position' onClick={showCompany}>
-                {position}
-              </h3>
+              <Link to={`/products/${id}`}>
+                <h3 className='position'>{position}</h3>
+              </Link>
               <p className='company-name'>{company}</p>
               <h4 className='company-location'>{location}</h4>
             </article>

@@ -1,19 +1,18 @@
 import React from 'react';
-import Header from './components/Header';
-import Search from './components/Search';
-import Companies from './components/Companies';
-import { useGlobalContext } from './context';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './pages/HomePage';
+import SingleCompany from './pages/SingleCompanyPage';
 
 function App() {
-  const { theme } = useGlobalContext();
   return (
-    <>
-      <main className={`${theme === 'light' ? 'light-theme' : 'dark-theme'}`}>
-        <Header />
-        <Search />
-        <Companies />
-      </main>
-    </>
+    <Router>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route exact path='/products/:id' children={<SingleCompany />} />
+      </Switch>
+    </Router>
   );
 }
 
