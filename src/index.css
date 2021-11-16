@@ -62,7 +62,10 @@ main {
 }
 
 li {
-  list-style-type: none;
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 1.25rem;
+  /* list-style-type: square; */
 }
 a {
   text-decoration: none;
@@ -480,5 +483,105 @@ All companies container
   }
   .position {
     font-size: 1rem;
+  }
+}
+
+/*
+=============== 
+Single company
+===============
+*/
+.single-company-header {
+  position: relative;
+  background: var(--single-company-bg);
+  width: 80vw;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding-bottom: 2rem;
+  padding-top: 4rem;
+  margin-top: -2rem;
+}
+.single-company-logo {
+  left: 50%;
+  top: -11%;
+  transform: translate(-50%);
+}
+.single-company-name h3 {
+  text-align: center;
+}
+.single-company-name p {
+  text-align: center;
+  color: var(--clr-grey);
+}
+.single-company-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.single-company-btn {
+  background: var(--clr-primary-ligth-violet);
+  color: var(--clr-primary-violet);
+}
+.single-company-content {
+  width: 80vw;
+  margin: 0 auto;
+  background: var(--single-company-bg);
+  border-radius: 6px;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+.single-company-general-info {
+  padding-top: 2rem;
+}
+.single-company-general-info p,
+.single-company-list span,
+.single-company-list2 span {
+  color: var(--clr-grey);
+}
+.single-company-list2 span {
+  margin-left: 0.6rem;
+}
+.single-company-general-info h4 {
+  font-size: 1.2rem;
+  color: var(--company-title);
+  margin: 2rem 0;
+}
+@media screen and (min-width: 700px) {
+  .single-company-header {
+    position: relative;
+    width: 90vw;
+    height: 8rem;
+  }
+  .text-btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50vw;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+  }
+
+  .single-company-logo {
+    height: 8rem;
+    width: 8rem;
+    object-fit: none;
+    padding: 0;
+    border-radius: 0px;
+    left: 9%;
+    top: 0%;
+    border-bottom-left-radius: 6px;
+  }
+  .single-company-name h3 {
+    text-align: center;
+  }
+  .single-company-name p {
+    text-align: center;
+    color: var(--clr-grey);
+  }
+  .single-company-header {
+    padding: 0;
+  }
+  .single-company-btn-container {
+    margin-bottom: 0;
   }
 }
