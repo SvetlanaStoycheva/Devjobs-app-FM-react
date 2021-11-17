@@ -108,6 +108,16 @@ const SingleCompanyPage = () => {
               </div>
             </div>
           </article>
+          {/* footer */}
+          <div className='single-company-footer'>
+            <div className='single-company-footer-container'>
+              <div className='footer-info'>
+                <h4>{position}</h4>
+                <p>So Digital Inc.</p>
+              </div>
+              <button className='submit-btn footer-btn'>Apply now</button>
+            </div>
+          </div>
         </section>
       </main>
     </>
