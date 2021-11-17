@@ -1,6 +1,6 @@
 ## Devjobs web app // Frontend Mentor // React JS
 
-- [see project]()
+- [see project](https://sweta-devjobs-fm-react.netlify.app)
 - The App is a devjobs board and the data is provided in a local data.json
 - The user can filter jobs on the home page by title, location, and whether a job is for a full-time position.
 - The user can click on a job from the home page so that they can read more information and apply for the job
